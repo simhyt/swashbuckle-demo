@@ -1,0 +1,56 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Luvit.Api"
+  },
+  "host": "localhost",
+  "basePath": "/Luvit.Api",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v1/translation-strings/{cultureName}/{context}": {
+      "get": {
+        "tags": [
+          "Language"
+        ],
+        "summary": "Get all phrases in a specific context",
+        "operationId": "Language_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "cultureName",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "context",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
